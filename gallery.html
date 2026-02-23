@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксперимент с Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-
+sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="custom.css">
+</head
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Моё Портфолио</h2>
+        <!-- Кнопки фильтров -->
+         <div class="text-center mb-4">
+            <div class="btn-ground" role="group">
+                <button class="btn btn-outline-primary" onclick="filterGallery('all')">Все</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('web')">Веб-дизайн</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('photo')">Фотографии</button>
+                <button class="btn btn-outline-primary" onclick="filterGallery('graphic')">Графика</button><br><br>
+                <div class="row g-3" id="gallery">
+ <!-- Карточка 1 - Веб-дизайн -->
+ <div class="col-6 col-md-4 gallery-item" data-category="web">
+ <div class="card h-100">
+ <img src="https://avatars.mds.yandex.net/i?id=2f57804e4afc4af327a7753f1fa7f1af_l-4809555-images-thumbs&n=13" 
+ class="card-img-top" alt="Веб-проект">
+ <div class="card-body p-2">
+ <h6 class="card-title mb-0">Корпоративный сайт</h6>
+ <small class="text-muted">Веб-дизайн</small>
+ </div>
+ </div>
+ </div>
+
+ <!-- Карточка 2 - Веб-дизайн -->
+ <div class="col-6 col-md-4 gallery-item" data-category="photo">
+ <div class="card h-100">
+ <img src="https://cdn1.youla.io/files/images/720_720_out/67/b1/67b1108d1d8597e56c02570b-2.jpg" 
+ class="card-img-top" alt="Веб-проект">
+ <div class="card-body p-2">
+ <h6 class="card-title mb-0">Корпоративный сайт</h6>
+ <small class="text-muted">Фотографии</small>
+ </div>
+ </div>
+ </div>
+
+ <!-- Карточка 3 - Веб-дизайн -->
+ <div class="col-6 col-md-4 gallery-item" data-category="photo">
+ <div class="card h-100">
+ <img src="https://cdn1.youla.io/files/images/720_720_out/66/0e/660ebebae53936e8d20b3f51-2.jpg" 
+ class="card-img-top" alt="Веб-проект">
+ <div class="card-body p-2">
+ <h6 class="card-title mb-0">Корпоративный сайт</h6>
+ <small class="text-muted">Фотографии</small>
+ </div>
+ </div>
+ </div>
+
+ <!-- Карточка 4 - Веб-дизайн -->
+ <div class="col-6 col-md-4 gallery-item" data-category="graphic">
+ <div class="card h-100">
+ <img src="https://cdn-edge.kwork.ru/pics/t3/87/21419396-1656244287.jpg" 
+ class="card-img-top" alt="Веб-проект">
+ <div class="card-body p-2">
+ <h6 class="card-title mb-0">Корпоративный сайт</h6>
+ <small class="text-muted">Графика</small>
+ </div>
+ </div>
+ </div>
+
+ <!-- Карточка 5 - Веб-дизайн -->
+ <div class="col-6 col-md-4 gallery-item" data-category="web">
+ <div class="card h-100">
+ <img src="https://cdn-edge.kwork.ru/files/portfolio/t3/51/0130923cb8fc2042863b2448849c42ba5afd2cb2-1741015651.jpg" 
+ class="card-img-top" alt="Веб-проект">
+ <div class="card-body p-2">
+ <h6 class="card-title mb-0">Корпоративный сайт</h6>
+ <small class="text-muted">Веб-дизайн</small>
+ </div>
+ </div>
+ </div>
+
+ <!-- Карточка 6 - Веб-дизайн -->
+ <div class="col-6 col-md-4 gallery-item" data-category="graphic">
+ <div class="card h-100">
+  <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/77864c129666415.616fe7e8243bf.png" 
+ class="card-img-top" alt="Веб-проект">
+ <div class="card-body p-2">
+ <h6 class="card-title mb-0">Корпоративный сайт</h6>
+ <small class="text-muted">Графика</small>
+ </div>
+ </div>
+ </div>
+</div>
+            </div>
+         </div>
+         <!-- Галерея -->
+         
+    </div>
+</body>
+<script>
+    function filterGallery(category){
+        const items = document.querySelectorAll(".gallery-item");
+        const buttons = document.querySelectorAll(".btn-group .btn")
+        items.forEach((item) => {
+            const itemCategory = item.dataset.category;
+            if (category === "all" || category === itemCategory){
+                item.style.display = "block";
+            } else{
+                item.style.display = "none";
+            }
+        });
+        buttons.forEach((btn)=>{
+            btn.classList.remove("active");
+            event.target.classList.add("active");
+        });
+        } 
+    window.onload = function (){
+        document.querySelector(".btn-group .btn").classList.add("active");
+    }
+</script>
+</html>
