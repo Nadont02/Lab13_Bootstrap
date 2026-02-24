@@ -43,5 +43,5 @@ Lab13_Bootstrap_FIO/
 ## Ссылки:
 + Bootstrap Documentation https://getbootstrap.com/docs/5.3/
 + GitHub Repository https://github.com/Nadont02/Lab13_Bootstrap
-
-© 2026 ФИО. Лабораторная работа по веб-разработке
+---
+© 2026 Дунюшкин Н.С | Салалыкина О.М. Лабораторная работа по веб-разработке
